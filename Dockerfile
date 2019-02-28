@@ -3,6 +3,7 @@ FROM node:10-alpine
 ARG cachePath=/tmp/npmcache
 
 RUN apk add --no-cache \
+            zip \
             chromium
 
 RUN npm install --global \
