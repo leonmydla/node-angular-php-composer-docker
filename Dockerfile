@@ -3,8 +3,9 @@ FROM node:10-alpine
 ARG cachePath=/tmp/npmcache
 
 RUN apk add --no-cache \
+            --update \
             chromium \
-            openssh-client \
+            openssh \
             zip
 
 RUN npm install --global \
