@@ -4,7 +4,7 @@ ARG cachePath=/tmp/npmcache
 
 RUN apk add --no-cache \
             chromium \
-            ssh \
+            openssh-client \
             zip
 
 RUN npm install --global \
