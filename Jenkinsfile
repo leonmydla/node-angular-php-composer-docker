@@ -18,6 +18,7 @@ pipeline {
                 }
 
                 sh 'docker push lmydla/node-angular:latest'
+                sh 'docker logout'
             }
         }
     }
