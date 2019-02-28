@@ -15,8 +15,9 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker_lmydla', passwordVariable: 'dockerpassword', usernameVariable: 'dockeruser')]) {
                     sh 'docker login -u ${dockeruser} -p ${dockerpassword}'
-                    sh 'docker push lmydla/node-angular:latest'
                 }
+
+                sh 'docker push lmydla/node-angular:latest'
             }
         }
     }
