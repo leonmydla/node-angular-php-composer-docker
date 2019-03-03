@@ -8,6 +8,8 @@ RUN apk add --no-cache \
             openssh-client \
             zip
 
+RUN echo 'StrictHostKeyChecking no' >> ~/.ssh/config
+
 RUN npm install --global \
                 --cache ${cachePath} \
                 @angular/cli
