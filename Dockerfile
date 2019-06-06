@@ -6,7 +6,8 @@ RUN apk add --no-cache \
             --update \
             chromium \
             openssh-client \
-            zip
+            zip \
+            composer
 
 RUN mkdir ~/.ssh/
 RUN touch ~/.ssh/config
