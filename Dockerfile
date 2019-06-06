@@ -7,7 +7,8 @@ RUN apk add --no-cache \
             chromium \
             openssh-client \
             zip \
-            composer
+            composer \
+            php7-ctype
 
 RUN mkdir ~/.ssh/
 RUN touch ~/.ssh/config
