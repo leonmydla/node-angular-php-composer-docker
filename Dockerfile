@@ -1,20 +1,16 @@
-FROM node:10-alpine
+FROM node:10
 
-ARG cachePath=/tmp/npmcache
-
-RUN apk add --no-cache \
-            --update \
-            chromium \
-            openssh-client \
-            zip \
-            composer \
-            php7-ctype
+RUN apt update && \
+    \
+    apt install -y \
+        chromium \
+        openssh-client \
+        zip \
+        composer \
+        php-ctype && \
+    \
+    apt clean
 
 RUN mkdir ~/.ssh/
 RUN touch ~/.ssh/config
 RUN echo 'StrictHostKeyChecking no' >> ~/.ssh/config
-
-RUN npm install --global \
-                --cache ${cachePath} \
-                @angular/cli
-RUN rm -rf ${cachePath} /tmp/npm* /root/.config
