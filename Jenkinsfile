@@ -21,6 +21,10 @@ pipeline {
                 sh 'docker push lmydla/node-angular-php-composer:latest'
                 sh 'docker logout'
             }
+
+            when {
+                branch 'master'
+            }
         }
     }
 }
